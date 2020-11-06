@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tic-Tac-Toe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Ultra&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ultra&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -25,11 +25,13 @@
     <main class="main">
       <form action="" class="main__form">
         <label class="form__message">Wprowadź nazwę graczy:</label>
-        <label for="form__first-player"><span class="far fa-circle"></span></label>
-        <input type="text" class="form__input--first" placeholder="Pierwszy gracz.. (kółko)">
-        <label for="form__second-player"><span class="fas fa-times"></span></span></label>
-        <input type="text" class="form__input--second" placeholder="Drugi gracz.. (krzyżyk)">
-        <input type="submit" value="Zatwierdź">
+        <label class="form__first-player"><span class="far fa-circle"></span></label>
+        <input type="text" class="form__input" placeholder="Pierwszy gracz.. (kółko)">
+        <span class="break"></span>
+        <label class="form__second-player"><span class="fas fa-times"></span></span></label>
+        <input type="text" class="form__input" placeholder="Drugi gracz.. (krzyżyk)">
+        <span class="break"></span>
+        <input type="submit" value="Zatwierdź" class="submit">
       </form>
       <div class="main__area">
         <div class="field"></div>
@@ -43,9 +45,11 @@
         <div class="field"></div>
       </div>
     </main>
-    <footer class="footer"></footer>
-    <script src="https://kit.fontawesome.com/9e7d514733.js" crossorigin="anonymous"></script>
+    <footer class="footer">
+      <div class="footer__upper"></div>
+    </footer>
   </div>
+  <script src="https://kit.fontawesome.com/9e7d514733.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

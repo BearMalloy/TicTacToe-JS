@@ -1,0 +1,61 @@
+.main {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    height:80%;
+    width:100%;
+    &__form {
+
+        height:66.6%;
+        .form__message {
+            display:block;
+            font-family: $main-font;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom:10%;
+        }
+        .form__first-player {
+            .fa-circle {
+                color: $circle-color;
+                font-size: 1.9rem;
+                margin-right:5%;
+            }
+        }
+        .form__second-player {
+            .fa-times {
+                color: $x-color;
+                font-size: 2.5rem;
+                margin-right:5%;
+            }
+        }
+        .break {
+            display:block;
+            margin-top:10%;
+        }
+        .form__input {
+            outline-style: none;
+            width:80%;
+            border:none;
+            padding-bottom:2%;
+            border-bottom: 1px solid #666;
+            font-size: 1.3rem;
+        }
+        .submit {
+            display:block;
+            background-color: lighten($color: $main-color, $amount: 10%);
+            border:none;
+            color:white;
+            margin:0 auto;
+            text-align: center;
+            line-height:100%;
+            padding: 5% 10%;
+            width:auto;
+            font-size: 1.2rem;
+            cursor:pointer;
+            transition: 0.3s;
+            &:hover {
+                background-color: $main-color;
+            }
+        }
+    }
+}

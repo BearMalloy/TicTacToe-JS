@@ -2,7 +2,7 @@
     display:flex;
     align-items: center;
     height: 8%;
-    background-color: $header-bgc;
+    background-color: $main-color;
     padding: 0 5%;
     font-family: $main-font;
     .header__logo {
@@ -35,12 +35,12 @@
                 a {
                     display: block;
                     text-decoration: none;
-                    background-color: darken($header-bgc, 15%);
+                    background-color: darken($main-color, 15%);
                     font-weight: bold;
                     text-transform: uppercase;
                     text-align: center;
                     width:100%;
-                    padding: 5% 0;
+                    padding: 7% 0;
                     color:#ddd;    
                 }
             }
