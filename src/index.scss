@@ -1,1 +1,7 @@
 @import "styles/reset";
+@import "styles/variables";
+@import "styles/header";
+
+.container {
+    height:100vh;
+}
