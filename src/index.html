@@ -4,11 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Tic-Tac-Toe</title>
 </head>
 
 <body>
-  <h1>casdsa</h1>
+  <div class="container">
+    <header class="header">
+      <img src="images/logo.png" alt="tictactoe-logo" class="header__logo">
+      <h1 class="header__h1">tic-tac-toe</h1>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="/">gra</a></li>
+          <li><a href="/">instrukcja</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <form action="" class="main__form">
+        <label class="form__message">Wprowadź nazwę graczy:</label>
+        <label for="form__first-player"><span class="far fa-circle"></span></label>
+        <input type="text" class="form__input--first" placeholder="Pierwszy gracz.. (kółko)">
+        <label for="form__second-player"><span class="fas fa-times"></span></span></label>
+        <input type="text" class="form__input--second" placeholder="Drugi gracz.. (krzyżyk)">
+        <input type="submit" value="Zatwierdź">
+      </form>
+      <div class="main__area">
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+    <script src="https://kit.fontawesome.com/9e7d514733.js" crossorigin="anonymous"></script>
+  </div>
 </body>
 
 </html>

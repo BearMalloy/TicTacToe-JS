@@ -20,23 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f372b8ad-e65f-418a-ac35-0840c7e229a7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TicTacToe-JS.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global/_global.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global/_typography.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/layout/_header.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/setup/_border-box.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/setup/_clearfix.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/setup/_normalize.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/utils/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/utils/_variables.scss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +52,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604669719514</updated>
-      <workItem from="1604669726567" duration="228000" />
+      <workItem from="1604669726567" duration="505000" />
     </task>
     <servers />
   </component>
