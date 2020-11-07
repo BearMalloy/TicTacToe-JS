@@ -5,6 +5,7 @@
     color: $x-color;
 }
 .main {
+    position: relative;
     display:flex;
     align-items: center;
     justify-content: space-evenly;
@@ -70,7 +71,7 @@
         display:flex;
         flex-wrap: wrap;
         height:$field-size;
-        width: $field-size;;
+        width: $field-size;
         .field {
             display:flex;
             justify-content: center;
@@ -83,5 +84,27 @@
                 background-color: #ddd;
             }
         }
+    }
+    .circle-turn, .x-turn  {
+        position:absolute;
+        top: 15%;
+        left:5%;
+        p {
+            font-family: $main-font;
+            font-size: 2rem;
+            span {
+                font-family: $logo-font;
+                color: $circle-color;
+            }
+        }
+    }
+    .x-turn {
+        left: 70%;
+        p {
+            span {
+                color: $x-color;
+            }
+        }
+        
     }
 }
