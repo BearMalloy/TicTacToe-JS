@@ -17,7 +17,13 @@
         transform: translate(-50%, -50%);
         height: 70%;
         width: 30%;
+        @include mq(smartphone) {width:20%; padding: 5% 2%;}
+        @media (orientation: portrait) {height: 40%; width: 50%}
+        @media (orientation: portrait) and (min-width: 700px) {height: 50%;}
         background-color: #fff;
+        img {
+            width:50%;
+        }
        p {
            text-align: center;
            font-family: $main-font;
@@ -59,7 +65,8 @@
         cursor:pointer;
         transition: 0.3s;
         margin-top:6%;
-        
+        @include mq(smartphone) {width: 50%; margin-top: 30%}
+        @media (orientation: portrait) {margin-top:15%;}
        }
     }
 }

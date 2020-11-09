@@ -9,10 +9,14 @@
     display:flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     height:80%;
     width:100%;
     &__form {
         height:66.6%;
+        width:40%;
+        @media (orientation: portrait) {width: 100%; text-align: center; margin-top: 10%; height: 30%}
+        @media (orientation: portrait) and (min-width:540px) {height: 20%; width: 40vh; margin-top: 10%;}
         .form__message {
             display:block;
             font-family: $main-font;
@@ -43,6 +47,7 @@
             padding-bottom:2%;
             border-bottom: 2px solid #666;
             font-size: 1.3rem;
+
             &:nth-of-type(1):focus {
                 border-bottom-color: $circle-color;
             }
@@ -56,6 +61,7 @@
             border:none;
             color:white;
             margin:0 15%;
+            @media (orientation: portrait) { margin: 0 auto; }
             text-align: center;
             padding: 3% 8%;
             width: 35%;
@@ -68,10 +74,13 @@
         }
     }
     &__area {
+        @include mq(smartphone) {height: 50vh; width: 50vh}
+        @include mq(tablet-large) {height: 60vh; width: 60vh}
+        @include mq(desktop-small) {height: 70vh; width: 70vh}
+        @media (orientation: portrait) {height: 30vh; width: 30vh; margin-top: 5%;}
+        @media (orientation: portrait) and (min-width:540px) {height: 40vh; width: 40vh; margin-top: 10%;}
         display:flex;
         flex-wrap: wrap;
-        height:$field-size;
-        width: $field-size;
         .field {
             display:flex;
             justify-content: center;
@@ -88,7 +97,9 @@
     .circle-turn, .x-turn  {
         position:absolute;
         top: 15%;
-        left:3%;
+        left:8%;
+        @include mq(desktop-small) {left: 2%;}
+        @media (orientation:portrait) {left: 50%; transform: translateX(-50%)}
         p {
             font-family: $main-font;
             font-size: 2rem;
@@ -100,6 +111,8 @@
     }
     .x-turn {
         left: 68%;
+        @include mq(desktop-small) {left: 73%;}
+        @media (orientation:portrait) {left: 50%; transform: translateX(-50%)}
         p {
             span {
                 color: $x-color;
