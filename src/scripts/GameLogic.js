@@ -7,6 +7,7 @@ class GameLogic {
         this.whichTurn = Math.floor(Math.random() * 2) + 1;
         this.popupBg;
         this.cells = [];
+        this.turns = 1;
     }
 
     drawCircle() {
@@ -35,41 +36,42 @@ class GameLogic {
         this.main.appendChild(div)
     }
     game() {
-        let turns = 0;
         this.whichTurnMessage()
+        
         this.fields.forEach(field => field.addEventListener("click", () => {
-            turns++;
+            
             const index = field.getAttribute("index")
             const message = document.querySelector(".turn-message")
             if (!this.cells[index]) {
                 if (this.whichTurn == 1) {
                     field.appendChild(this.drawCircle())
                     this.cells[index] = 'O';
-                    this.checkWinnerMsg(turns, 'O')
+                    this.checkWinnerMsg('O')
                     this.whichTurn++;
                 } else {
                     field.appendChild(this.drawX())
                     this.cells[index] = 'X';
-                    this.checkWinnerMsg(turns, 'X')
+                    this.checkWinnerMsg('X')
                     this.whichTurn--;
                 }
+                this.turns++
                 this.whichTurnMessage()
                 message.parentNode.removeChild(message);
-
             }
         }))
     }
     checkWinnerAlg() {
         const cells = this.cells;
         if (cells[0] == 'O' && cells[0] == cells[1] && cells[1] == cells[2] ||
-            cells[3] == 'O' && cells[3] == cells[4] && cells[4] == cells[5] ||
-            cells[6] == 'O' && cells[6] == cells[7] && cells[7] == cells[8] ||
-            cells[0] == 'O' && cells[0] == cells[3] && cells[3] == cells[6] ||
-            cells[1] == 'O' && cells[1] == cells[4] && cells[4] == cells[7] ||
-            cells[2] == 'O' && cells[2] == cells[5] && cells[5] == cells[8] ||
-            cells[0] == 'O' && cells[0] == cells[4] && cells[4] == cells[8] ||
-            cells[2] == 'O' && cells[2] == cells[4] && cells[4] == cells[6]) {
-            return 'O wins';
+        cells[3] == 'O' && cells[3] == cells[4] && cells[4] == cells[5] ||
+        cells[6] == 'O' && cells[6] == cells[7] && cells[7] == cells[8] ||
+        cells[0] == 'O' && cells[0] == cells[3] && cells[3] == cells[6] ||
+        cells[1] == 'O' && cells[1] == cells[4] && cells[4] == cells[7] ||
+        cells[2] == 'O' && cells[2] == cells[5] && cells[5] == cells[8] ||
+        cells[0] == 'O' && cells[0] == cells[4] && cells[4] == cells[8] ||
+        cells[2] == 'O' && cells[2] == cells[4] && cells[4] == cells[6]) {
+            return 'o wins';
+       
         } else if (cells[0] == 'O' && cells[0] == cells[1] && cells[1] == cells[2] ||
             cells[3] == 'X' && cells[3] == cells[4] && cells[4] == cells[5] ||
             cells[6] == 'X' && cells[6] == cells[7] && cells[7] == cells[8] ||
@@ -78,35 +80,39 @@ class GameLogic {
             cells[2] == 'X' && cells[2] == cells[5] && cells[5] == cells[8] ||
             cells[0] == 'X' && cells[0] == cells[4] && cells[4] == cells[8] ||
             cells[2] == 'X' && cells[2] == cells[4] && cells[4] == cells[6]) {
-            return 'X wins';
-        } 
+            return 'x wins';
+        } else if (this.turns === 9) {
+            return "draw"
+        }
     }
-    checkWinnerMsg(turns) {
-        if (turns >= 5) {
+    checkWinnerMsg() {
+        if (this.turns >= 5) {
             if (this.checkWinnerAlg()) {
+                
                 this.popupBg = document.createElement("div")
                 this.popupBg.className = "popup-bg"
                 document.body.appendChild(this.popupBg)
 
                 const popup = document.createElement("div")
                 popup.className = "popup"
-                let winnerName;
-                if (this.checkWinnerAlg() === 'O wins') {
-                    winnerName = this.circlePlName;
-                } else if (this.checkWinnerAlg() === 'X wins') {
-                    winnerName = this.xPlName
-                } 
-                switch (winnerName) {
-                    case this.circlePlName:
-                        popup.innerHTML = `<p>Zwyciężył gracz <span class='cir'>${this.circlePlName}</span> (kółko). <strong>Gratulacje!</strong></p>`
-                        break;
-                    case this.xPlName:
-                        popup.innerHTML = `<p>Zwyciężył gracz <span class='x'>${this.xPlName}</span> (krzyżyk). <strong>Gratulacje!</strong></p>`
-                        break;
-                }
-                const button = this.revangeButton()
                 const img = document.createElement("img")
-                img.setAttribute("src", "src/images/medal.png")
+               switch (this.checkWinnerAlg()) {
+                   case 'o wins' :
+                        popup.innerHTML = `<p>Zwyciężył gracz <span class='cir'>${this.circlePlName}</span> (kółko). <strong>Gratulacje!</strong></p>`
+                        img.setAttribute("src", "src/images/medal.png")
+                        break;
+                    case 'x wins':
+                        popup.innerHTML = `<p>Zwyciężył gracz <span class='x'>${this.xPlName}</span> (krzyżyk). <strong>Gratulacje!</strong></p>`
+                        img.setAttribute("src", "src/images/medal.png")
+                        break;
+                    case 'draw':
+                        popup.innerHTML = "<p>Tym razem padł remis."
+                        img.setAttribute("src", "src/images/draw.png")
+                        break;
+               }
+                
+                const button = this.revangeButton()
+                
                 this.popupBg.appendChild(popup)
                 popup.appendChild(img)
                 popup.appendChild(button)
@@ -128,11 +134,13 @@ class GameLogic {
             this.popupBg.style.display = "none";
             this.whichTurn = Math.floor(Math.random() * 2) + 1;
             this.cells = []
+            this.turns = 1;
             this.fields.forEach(field => field.textContent = "")
             this.main.style.filter = "blur(0)"
             const message = document.querySelector(".turn-message")
             message.parentNode.removeChild(message);
             this.game()
+            
     }
     
 
